@@ -1,0 +1,55 @@
+def game():
+
+    player1Score = 0
+    player2Score = 0
+    
+    player1ScoreStr = str(player1Score)
+    player2ScoreStr = str(player2Score)
+    
+    while player1Score or player2Score < 5:
+        
+        player1Numstr = input("\nPlayer 1 it is your turn to enter your integer:")
+        player2Numstr = input("\nPlayer 2 it is your turn to enter your integer:")
+    
+        player1Num = int(player1Numstr)
+        player2Num = int(player2Numstr)
+        
+        print("\nPlayer number 1 chose :" + player1Numstr + " and player number 2 chose :" + player2Numstr)
+        
+        if player1Num < player2Num:
+        
+            diffnum = player2Num - player1Num
+            
+            if diffnum > 1:
+                print("\nPlayer number 1 gets 1 point!")
+                player1Score += 1
+                
+            elif diffnum == 1:
+                print("\nPlayer number 2 gets 2 points!")
+                player2Score += 2
+                
+        elif player2Num < player1Num:
+            
+            diffnum2 = player1Num - player2Num
+            
+            if diffnum2 > 1:
+                print("\nPlayer number 2 gets 1 point!")
+                player2Score += 1
+                
+            elif diffnum2 == 1:
+                print("\nPlayer number 1 gets 2 points!")
+                player1Score += 2
+                
+        elif player1Num == player2Num:
+            print("\nTie, neither player gets a point!")
+            
+        print("\nPlayer 1 is on: " + player1ScoreStr + " and player 2 is on: " + player2ScoreStr)
+            
+    if player1Score >= 5:
+        print("\nWell done player 1 you won!")
+        
+    elif player2Score >= 5:
+        print("\nWell done player 2 you won!")        
+        
+if __name__ == "__main__":
+    game()
