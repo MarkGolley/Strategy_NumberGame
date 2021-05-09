@@ -1,0 +1,35 @@
+def game():
+
+    player1Score = 0
+    player2Score = 0
+    
+    while int(player1Score) or int(player2Score) < 5:
+        
+        player1Num = input("\nPlayer 1 it is your turn to enter your integer:")
+        player2Num = input("\nPlayer 2 it is your turn to enter your integer:")
+        
+        if max(int(player1Num),int(player2Num)) - min(int(player1Num),int(player2Num)) > 1:
+            if player1Num > player2Num:
+                player2Score += 1
+            else:
+                player1Score += 1
+
+        elif max(int(player1Num),int(player2Num)) - min(int(player1Num),int(player2Num)) <= 1:
+            if player1Num > player2Num:
+                player1Score += 2
+            else:
+                player2Score += 2
+        
+        else:
+            print("it was a tie, lets go again!")
+            
+        print("\nThe score is.... player number 1 on: " + str(player1Score) + " and player number 2 on: " + str(player2Score))
+
+    if int(player1Score) >= 5:
+        print("\nWell done player 1 you won!")
+        
+    else:
+        print("\nWell done player 2 you won!")        
+        
+if __name__ == "__main__":
+    game()
